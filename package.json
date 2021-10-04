@@ -1,0 +1,28 @@
+{
+  "name": "twelve-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdmcculloch/twelve-test.git"
+  },
+  "author": "Will McCulloch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdmcculloch/twelve-test/issues"
+  },
+  "homepage": "https://github.com/wdmcculloch/twelve-test#readme"
+}
