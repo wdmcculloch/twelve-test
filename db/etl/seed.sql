@@ -1,0 +1,1 @@
+\copy us_historic_emissions from './emission-data/historical_emissions.csv' with delimiter ',' csv header;
