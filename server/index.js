@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { sectorNames, gasNames, year, sector, gas } = require("./routes.js");
+const path = require('path');
 const app = express();
-const client = require("../db/index.js");
 const port = 3000;
-console.log(year);
+const client = require("../db/index.js");
+const { sectorNames, gasNames, year, sector, gas } = require("./routes.js");
+
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
