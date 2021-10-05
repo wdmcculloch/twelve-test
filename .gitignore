@@ -103,5 +103,5 @@ typings/
 # TernJS port file
 .tern-port
 
-config.js
+# config.js
 # emission-data
