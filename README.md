@@ -55,7 +55,7 @@ bash ./db/db.sh
 ```
 npm install
 ```
-#### Transpile front end and start server
+#### Build and Start
 ```
 npm run build
 npm start
