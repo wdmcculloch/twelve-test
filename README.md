@@ -2,15 +2,13 @@
 
 ## Prerequisites
 ```
-postgres server running locally
+postgres server running locally (instructions below if needed)
 node
 npm
 ```
-## Install postgresql locally
+#### Install postgresql locally
 #### MacOS via Homebrew
 ```
-brew services update 
-brew services doctor
 brew install postgresql
 brew services start postgresql
 brew services list (check that server is running)
@@ -20,14 +18,7 @@ brew services list (check that server is running)
 https://www.postgresqltutorial.com/install-postgresql/
 ```
 ## Run Locally
-#### Clone repo
-```
-mkdir twelve
-cd twelve
-git clone https://github.com/wdmcculloch/twelve-test.git
-```
-
-#### In /config directory change config.example.js to config.js 
+#### Clone this repo and then fill in postgres port number in config/config.js
 ```
 const clientConfig = {
   host: "localhost",
@@ -35,7 +26,7 @@ const clientConfig = {
   port: 'FILL_ME_IN',
 }
 ```
-#### Get port postgres is running on locally
+#### Get port that postgres is running on locally (directions below to get postgres port)
 ##### Open postgres db shell
 ```
 psql postgres 
@@ -44,8 +35,6 @@ psql postgres
 ```
 \conninfo
 ```
-#### Update port in clientConfig
-
 #### Create and Seed Database
 ```
 cd twelve-test
