@@ -25,8 +25,8 @@
     "style-loader": "^3.3.0"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "build": "webpack",
+    "start": "nodemon server/index.js",
+    "build": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

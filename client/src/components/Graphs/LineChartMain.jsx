@@ -4,8 +4,6 @@ import {
   Legend,
   Tooltip,
   LineChart,
-  AreaChart,
-  Area,
   Line,
   CartesianGrid,
   XAxis,
@@ -15,7 +13,6 @@ import {
 import styles from "./LineChartMain.module.css";
 
 const LineChartMain = ({ graphData }) => {
-  console.log(graphData);
   return (
     <div className={styles.chartContainer}>
       <ResponsiveContainer width={'100%'} >

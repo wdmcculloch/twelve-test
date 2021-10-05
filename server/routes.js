@@ -1,7 +1,7 @@
 const client = require("../db/index.js");
 
 module.exports = {
-  sectorNames: (req, res) => {
+  getAllSectorNames: (req, res) => {
     client
       .query("select distinct sector from us_historic_emissions")
       .then((r) => {
@@ -13,7 +13,7 @@ module.exports = {
       })
       .catch((err) => console.error(err.stack));
   },
-  gasNames: (req, res) => {
+  getAllGasNames: (req, res) => {
     client
       .query("select distinct gas from us_historic_emissions")
       .then((r) => {
@@ -25,7 +25,7 @@ module.exports = {
       })
       .catch((err) => console.error(err.stack));
   },
-  year: (req, res) => {
+  getDataForOneYear: (req, res) => {
     let year = req.query.year;
     client
       .query(`select "${year}", gas, unit, sector from us_historic_emissions`)
@@ -37,7 +37,7 @@ module.exports = {
         res.sendStatus(500);
       });
   },
-  sector: (req, res) => {
+  getDataForOneSector: (req, res) => {
     let sector = req.query.sector;
     client
       .query(
@@ -51,7 +51,7 @@ module.exports = {
         res.sendStatus(500);
       });
   },
-  gas: (req, res) => {
+  getDataForOneGas: (req, res) => {
     client
       .query(
         `select * from us_historic_emissions where gas = '${req.query.gas}'`
@@ -64,9 +64,8 @@ module.exports = {
         res.sendStatus(500);
       });
   },
-  data: (req, res) => {
+  getGraphDataAllParams: (req, res) => {
     let data = req.query;
-    console.log(data);
     let range = data.range.filter(num => num >= Number(data.start) && num <= Number(data.end));
     range = `"${range.join('", "')}"`;
     client

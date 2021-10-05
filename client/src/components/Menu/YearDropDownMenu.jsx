@@ -8,7 +8,7 @@ const YearDropDownMenu = ({ handleChange, start, end, range }) => {
 
       <div className={styles.start}>
         <label><h3>Start</h3></label>
-        <select id="start"  onChange={handleChange}>
+        <select id="start"  onChange={handleChange} value={start}>
           {range.map((item, i) =>
             item > end ? (
               <option key={i} value={item} disabled>
@@ -24,14 +24,14 @@ const YearDropDownMenu = ({ handleChange, start, end, range }) => {
       </div>
       <div className={styles.end}>
         <label><h3>End</h3></label>
-        <select id="end" onChange={handleChange}>
+        <select id="end" onChange={handleChange} value={end}>
           {range.map((year, i) =>
             year < start ? (
               <option key={i} value={year} disabled>
                 {year}
               </option>
             ) : (
-              <option key={i} value={year}>
+              <option key={i} value={year} >
                 {year}
               </option>
             )

@@ -5,12 +5,12 @@ const app = express();
 const port = 3000;
 const client = require("../db/index.js");
 const {
-  sectorNames,
-  gasNames,
-  year,
-  sector,
-  gas,
-  data,
+  getAllSectorNames,
+  getAllGasNames,
+  getDataForOneYear,
+  getDataForOneSector,
+  getDataForOneGas,
+  getGraphDataAllParams,
 } = require("./routes.js");
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
@@ -19,12 +19,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes
-app.get("/sectorNames", sectorNames);
-app.get("/gasNames", gasNames);
-app.get("/year", year);
-app.get("/sector", sector);
-app.get("/gas", gas);
-app.get("/data", data);
+app.get("/sectorNames", getAllSectorNames);
+app.get("/gasNames", getAllGasNames);
+app.get("/year", getDataForOneYear);
+app.get("/sector", getDataForOneSector);
+app.get("/gas", getDataForOneGas);
+app.get("/data", getGraphDataAllParams);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
