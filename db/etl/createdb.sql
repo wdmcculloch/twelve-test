@@ -1,2 +1,1 @@
-DROP DATABASE IF EXISTS emissions;
 CREATE DATABASE emissions;

@@ -1,7 +1,7 @@
 const clientConfig = {
   host: "localhost",
   database: "emissions",
-  port: 'port postgres is running on locally',
+  port: 'FILL_ME_IN',
 };
 
 module.exports = clientConfig;
