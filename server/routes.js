@@ -78,7 +78,7 @@ module.exports = {
         for(let key in r.rows[0]) {
           format.push({
             year: key,
-            value: r.rows[0][key]
+            value: Number(r.rows[0][key])
           })
         }
         res.send(format)

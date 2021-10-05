@@ -2,22 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./YearDropDownMenu.module.css";
 
-// const generateRange = (start, end) => {
-//   let range = [];
-//   for (let i = start; i <= end; i++) {
-//     range.push(i);
-//   }
-//   return range;
-// };
-
 const YearDropDownMenu = ({ handleChange, start, end, range }) => {
-  // const [range, setRange] = useState(generateRange(start, end));
-
   return (
-    <div>
-      <div>
-        <label>Start Date</label>
-        <select id="start" onChange={handleChange}>
+    <div className={styles.yearContainer}>
+
+      <div className={styles.start}>
+        <label><h3>Start</h3></label>
+        <select id="start"  onChange={handleChange}>
           {range.map((item, i) =>
             item > end ? (
               <option key={i} value={item} disabled>
@@ -31,8 +22,8 @@ const YearDropDownMenu = ({ handleChange, start, end, range }) => {
           )}
         </select>
       </div>
-      <div>
-        <label>End Date</label>
+      <div className={styles.end}>
+        <label><h3>End</h3></label>
         <select id="end" onChange={handleChange}>
           {range.map((year, i) =>
             year < start ? (

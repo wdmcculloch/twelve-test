@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styles from './SectorDropDownMenu.module.css'
 
-const SectorDropDownMenu = ({handleChange}) => {
+const SectorDropDownMenu = ({ handleChange }) => {
   const [sectorNames, setSectorNames] = useState([]);
 
   useEffect(() => {
@@ -12,11 +13,13 @@ const SectorDropDownMenu = ({handleChange}) => {
   }, []);
 
   return (
-    <div>
-      <label>Sector</label>
-      <select onChange={handleChange} id='sector'>
+    <div className={styles.sector}>
+      <label>
+        <h3>Sector</h3>
+      </label>
+      <select onChange={handleChange} id="sector">
         {sectorNames.map((item, i) => (
-          <option key={i}  value={item} >
+          <option key={i} value={item}>
             {item}
           </option>
         ))}

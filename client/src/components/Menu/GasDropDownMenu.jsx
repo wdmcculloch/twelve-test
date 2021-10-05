@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from './GasDropDownMenu.module.css';
 
 import axios from "axios";
 
@@ -10,13 +11,13 @@ const GasDropDownMenu = ({ handleChange }) => {
       .then((res) => {
         setGasNames(res.data);
       })
-      .catch((err) => console.err(err.stack));
+      .catch((err) => console.error(err.stack));
   }, []);
 
   return (
-    <div>
-      <label>Gas</label>
-      <select onChange={handleChange} id='gas' >
+    <div className={styles.gas}>
+      <label><h3>Gas</h3></label>
+      <select className={styles.select} onChange={handleChange} id='gas' >
         {gasNames.map((item, i) => (
           <option key={i} value={item}>
             {item}

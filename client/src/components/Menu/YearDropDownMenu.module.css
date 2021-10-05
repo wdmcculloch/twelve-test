@@ -1,0 +1,11 @@
+.yearContainer {
+  display: flex;
+}
+
+.start {
+  margin-right: 4vw;
+}
+
+.end {
+  margin-right: 4vw;
+}

@@ -55,6 +55,9 @@ const App = () => {
 
   return (
     <div>
+      <div id="title-container">
+        <h1>US Historic Emissions</h1>
+      </div>
       <MenuMain
         start={start}
         end={end}
@@ -62,7 +65,7 @@ const App = () => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <LineChartMain graphData={graphData}/>
+      <LineChartMain graphData={graphData} />
     </div>
   );
 };

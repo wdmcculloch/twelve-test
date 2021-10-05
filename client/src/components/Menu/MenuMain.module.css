@@ -1,0 +1,18 @@
+.inputContainer {
+  margin: 5vh auto;
+  width: 100vw;
+  width: 80%;
+  display: flex;
+  padding-left: 7vw;
+  align-items: center;
+}
+
+.inputContainer button {
+  display: flex;
+  border: none;
+  font-family: var(--ff-1);
+  color: var(--font-color-dark)
+}
+
+
+
