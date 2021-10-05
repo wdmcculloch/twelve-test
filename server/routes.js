@@ -64,4 +64,31 @@ module.exports = {
         res.sendStatus(500);
       });
   },
+  data: (req, res) => {
+    let data = req.query;
+    console.log(data);
+    let range = data.range.filter(num => num >= Number(data.start) && num <= Number(data.end));
+    range = `"${range.join('", "')}"`;
+    client
+      .query(
+        `select ${range} from us_historic_emissions where gas = '${data.gas}' and sector = '${data.sector}'`
+      )
+      .then((r) => {
+        let format = [];
+        for(let key in r.rows[0]) {
+          format.push({
+            year: key,
+            value: r.rows[0][key]
+          })
+        }
+        res.send(format)
+      })
+      .catch((err) => {
+        console.error(err.stack);
+        res.sendStatus(500);
+      });
+  },
 };
+
+
+// select "2018","2017","2016","2015", gas, sector from us_historic_emissions where sector = 'Agriculture' and gas = 'CH4';
