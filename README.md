@@ -18,7 +18,7 @@ brew services list (check that server is running)
 https://www.postgresqltutorial.com/install-postgresql/
 ```
 ## Run Locally
-#### Clone this repo and then fill in postgres port number in config/config.js
+#### Clone this repo and then fill in postgres port number in config/config.js (directions below to get postgres port)
 ```
 const clientConfig = {
   host: "localhost",
@@ -26,15 +26,12 @@ const clientConfig = {
   port: 'FILL_ME_IN',
 }
 ```
-#### Get port that postgres is running on locally (directions below to get postgres port)
-##### Open postgres db shell
+#### To find local postgres port open postgres db shell, and then get connection info
 ```
 psql postgres 
-```
-##### get connection info
-```
 \conninfo
 ```
+
 #### Create and Seed Database
 ```
 cd twelve-test
