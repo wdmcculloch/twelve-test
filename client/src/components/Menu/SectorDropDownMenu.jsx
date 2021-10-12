@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from './SectorDropDownMenu.module.css'
 
-const SectorDropDownMenu = ({ handleChange }) => {
+const SectorDropDownMenu = ({ sector, handleChange }) => {
   const [sectorNames, setSectorNames] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const SectorDropDownMenu = ({ handleChange }) => {
       <label>
         <h3>Sector</h3>
       </label>
-      <select onChange={handleChange} id="sector">
+      <select onChange={handleChange} id="sector" value={sector}>
         {sectorNames.map((item, i) => (
           <option key={i} value={item}>
             {item}

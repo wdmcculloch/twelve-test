@@ -18,7 +18,6 @@ const App = () => {
   const [end, setEnd] = useState(2018);
   const [range, setRange] = useState(generateRange(start, end));
   const [graphData, setGraphData] = useState([]);
-
   const handleChange = (e) => {
     e.preventDefault();
     let value = e.target.value;
@@ -59,6 +58,8 @@ const App = () => {
         <h1>US Historic Emissions</h1>
       </div>
       <MenuMain
+        gas={gas}
+        sector={sector}
         start={start}
         end={end}
         range={range}

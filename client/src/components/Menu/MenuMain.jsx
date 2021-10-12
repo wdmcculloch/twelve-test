@@ -5,11 +5,11 @@ import YearDropDownMenu from "./YearDropDownMenu.jsx";
 import { motion } from "framer-motion";
 import styles from "./MenuMain.module.css";
 
-const MenuMain = ({ start, end, range, handleChange, handleSubmit }) => {
+const MenuMain = ({ gas, sector, start, end, range, handleChange, handleSubmit }) => {
   return (
     <div className={styles.inputContainer}>
-      <GasDropDownMenu handleChange={handleChange} />
-      <SectorDropDownMenu handleChange={handleChange} />
+      <GasDropDownMenu handleChange={handleChange} gas={gas}/>
+      <SectorDropDownMenu handleChange={handleChange} sector={sector}/>
       <YearDropDownMenu
         handleChange={handleChange}
         start={start}

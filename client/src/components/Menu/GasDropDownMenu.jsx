@@ -3,7 +3,7 @@ import styles from './GasDropDownMenu.module.css';
 
 import axios from "axios";
 
-const GasDropDownMenu = ({ handleChange }) => {
+const GasDropDownMenu = ({ gas, handleChange }) => {
   const [gasNames, setGasNames] = useState([]);
   useEffect(() => {
     axios
@@ -17,7 +17,7 @@ const GasDropDownMenu = ({ handleChange }) => {
   return (
     <div className={styles.gas}>
       <label><h3>Gas</h3></label>
-      <select className={styles.select} onChange={handleChange} id='gas' >
+      <select className={styles.select} onChange={handleChange} id='gas' value={gas}>
         {gasNames.map((item, i) => (
           <option key={i} value={item}>
             {item}
