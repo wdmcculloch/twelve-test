@@ -105,3 +105,4 @@ typings/
 
 # config.js
 # emission-data
+client/dist/bundle.js

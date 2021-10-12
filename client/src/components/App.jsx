@@ -38,7 +38,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .get("/data", {
+      .get("http://localhost:3000/data", {
         params: {
           gas: gas,
           sector: sector,

@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 const path = require("path");
 const app = express();
 const port = 3000;
@@ -13,7 +14,9 @@ const {
   getGraphDataAllParams,
 } = require("./routes.js");
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(cors());
+
+// app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
