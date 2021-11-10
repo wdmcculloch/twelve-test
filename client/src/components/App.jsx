@@ -18,6 +18,24 @@ const App = () => {
   const [end, setEnd] = useState(2018);
   const [range, setRange] = useState(generateRange(start, end));
   const [graphData, setGraphData] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get("http://localhost:3000/data", {
+      params: {
+        gas: gas,
+        sector: sector,
+        start: start,
+        end: end,
+        range: range,
+      },
+    })
+    .then((res) => {
+      setGraphData(res.data);
+    })
+    .catch((err) => console.error(err));
+  }, [gas, sector, start, end]);
+
   const handleChange = (e) => {
     e.preventDefault();
     let value = e.target.value;
@@ -66,7 +84,8 @@ const App = () => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <LineChartMain graphData={graphData} />
+      {graphData.length === 0 ? <p>{`No data for ${gas} emission data from the ${sector} sector`}</p> : <LineChartMain graphData={graphData} />}
+
     </div>
   );
 };
