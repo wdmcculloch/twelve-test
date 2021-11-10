@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-    .get("http://localhost:3000/data", {
+    .get("/data", {
       params: {
         gas: gas,
         sector: sector,
@@ -55,7 +55,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .get("http://localhost:3000/data", {
+      .get("/data", {
         params: {
           gas: gas,
           sector: sector,
