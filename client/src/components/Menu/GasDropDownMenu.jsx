@@ -7,7 +7,7 @@ const GasDropDownMenu = ({ gas, handleChange }) => {
   const [gasNames, setGasNames] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/gasNames")
+      .get("/gasNames")
       .then((res) => {
         setGasNames(res.data);
       })
