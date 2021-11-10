@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './GasDropDownMenu.module.css';
+import { serverConfig } from "../../../../config/config.js";
+
 
 import axios from "axios";
 
@@ -7,7 +9,7 @@ const GasDropDownMenu = ({ gas, handleChange }) => {
   const [gasNames, setGasNames] = useState([]);
   useEffect(() => {
     axios
-      .get("/gasNames")
+      .get(`${serverConfig.url}/gasNames`)
       .then((res) => {
         setGasNames(res.data);
       })

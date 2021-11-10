@@ -1,7 +1,11 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
+import { serverConfig } from "../../../config/config.js";
+
 import MenuMain from "./Menu/MenuMain.jsx";
 import LineChartMain from "./Graphs/LineChartMain.jsx";
+
+console.log(serverConfig)
 
 const generateRange = (start, end) => {
   let range = [];
@@ -21,19 +25,19 @@ const App = () => {
 
   useEffect(() => {
     axios
-    .get("/data", {
-      params: {
-        gas: gas,
-        sector: sector,
-        start: start,
-        end: end,
-        range: range,
-      },
-    })
-    .then((res) => {
-      setGraphData(res.data);
-    })
-    .catch((err) => console.error(err));
+      .get(`${serverConfig.url}/data`, {
+        params: {
+          gas: gas,
+          sector: sector,
+          start: start,
+          end: end,
+          range: range,
+        },
+      })
+      .then((res) => {
+        setGraphData(res.data);
+      })
+      .catch((err) => console.error(err));
   }, [gas, sector, start, end]);
 
   const handleChange = (e) => {
@@ -84,8 +88,11 @@ const App = () => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      {graphData.length === 0 ? <p>{`No data for ${gas} emission data from the ${sector} sector`}</p> : <LineChartMain graphData={graphData} />}
-
+      {graphData.length === 0 ? (
+        <p>{`No data for ${gas} emission data from the ${sector} sector`}</p>
+      ) : (
+        <LineChartMain graphData={graphData} />
+      )}
     </div>
   );
 };
