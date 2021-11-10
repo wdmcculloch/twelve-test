@@ -56,24 +56,6 @@ const App = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .get("/data", {
-        params: {
-          gas: gas,
-          sector: sector,
-          start: start,
-          end: end,
-          range: range,
-        },
-      })
-      .then((res) => {
-        setGraphData(res.data);
-      })
-      .catch((err) => console.error(err));
-  };
-
   return (
     <div>
       <div id="title-container">
@@ -86,7 +68,6 @@ const App = () => {
         end={end}
         range={range}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
       />
       {graphData.length === 0 ? (
         <p>{`No data for ${gas} emission data from the ${sector} sector`}</p>
