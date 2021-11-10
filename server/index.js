@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const path = require("path");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const client = require("../db/index.js");
 const {
   getAllSectorNames,
