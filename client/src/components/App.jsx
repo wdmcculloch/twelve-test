@@ -2,8 +2,8 @@ import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import { serverConfig } from "../../../config/config.js";
 
-import MenuMain from "./Menu/MenuMain.jsx";
-import LineChartMain from "./Graphs/LineChartMain.jsx";
+import MenuMain from "./Menu/MenuMain/MenuMain.jsx";
+import LineChartMain from "./Graphs/LineChartMain/LineChartMain.jsx";
 
 console.log(serverConfig)
 

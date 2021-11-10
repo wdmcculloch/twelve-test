@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import GasDropDownMenu from "./GasDropDownMenu.jsx";
-import SectorDropDownMenu from "./SectorDropDownMenu.jsx";
-import YearDropDownMenu from "./YearDropDownMenu.jsx";
+import GasDropDownMenu from "../GasDropDown/GasDropDownMenu.jsx";
+import SectorDropDownMenu from "../SectorDropDown/SectorDropDownMenu.jsx";
+import YearDropDownMenu from "../YearDropDown/YearDropDownMenu.jsx";
 import { motion } from "framer-motion";
 import styles from "./MenuMain.module.css";
 
