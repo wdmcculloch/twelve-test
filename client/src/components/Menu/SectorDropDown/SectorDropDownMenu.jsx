@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { serverConfig } from "../../../../../config/config.js";
 import styles from './SectorDropDownMenu.module.css'
 
 const SectorDropDownMenu = ({ sector, handleChange }) => {
@@ -7,7 +8,7 @@ const SectorDropDownMenu = ({ sector, handleChange }) => {
 
   useEffect(() => {
     axios
-      .get("/sectorNames")
+      .get(`${serverConfig.url}/sectorNames`)
       .then((res) => setSectorNames(res.data))
       .catch((err) => console.error(err));
   }, []);

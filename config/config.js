@@ -1,3 +1,4 @@
+//deployed connection config
 const clientConfig = {
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -5,11 +6,19 @@ const clientConfig = {
   }
 };
 
-//local connection config
+const serverConfig = {
+  url: "",
+};
+
+// local connection config
 // const clientConfig = {
 //   host: "localhost",
 //   database: "emissions",
-//   port: "Update",
+//   port: ,
 // };
 
-module.exports = clientConfig;
+// const serverConfig = {
+//   url: "http://localhost:3000",
+// };
+
+module.exports = { clientConfig, serverConfig };
