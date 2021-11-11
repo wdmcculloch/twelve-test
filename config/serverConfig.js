@@ -2,7 +2,7 @@
 //   url: "",
 // };
 const serverConfig = {
-  url: "http://localhost:3000",
+  url: "",
 };
 
 module.exports = serverConfig

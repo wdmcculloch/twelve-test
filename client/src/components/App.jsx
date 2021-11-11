@@ -3,7 +3,6 @@ import axios from "axios";
 import serverConfig from "../../../config/serverConfig.js";
 import MenuMain from "./Menu/MenuMain/MenuMain.jsx";
 import LineChartMain from "./Graphs/LineChartMain/LineChartMain.jsx";
-console.log(serverConfig)
 const generateRange = (start, end) => {
   let range = [];
   for (let i = start; i <= end; i++) {
