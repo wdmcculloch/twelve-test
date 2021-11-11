@@ -8,7 +8,7 @@ const GasDropDownMenu = ({ gas, handleChange }) => {
   const [gasNames, setGasNames] = useState([]);
   useEffect(() => {
     axios
-      .get(`/gasNames`)
+      .get(`${serverConfig.url}/gasNames`)
       .then((res) => {
         setGasNames(res.data);
       })
