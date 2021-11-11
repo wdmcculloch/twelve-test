@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./GasDropDownMenu.module.css";
-import { serverConfig } from "../../../../../config/config.js";
+import serverConfig from "../../../../../config/serverConfig.js";
 
 import axios from "axios";
 

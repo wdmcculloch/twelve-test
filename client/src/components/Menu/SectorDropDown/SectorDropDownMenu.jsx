@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { serverConfig } from "../../../../../config/config.js";
+import serverConfig from "../../../../../config/serverConfig.js";
 import styles from './SectorDropDownMenu.module.css'
 
 const SectorDropDownMenu = ({ sector, handleChange }) => {

@@ -1,7 +1,7 @@
 {
   "name": "twelve-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "us historic emissions visualizer",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.22.0",

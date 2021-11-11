@@ -1,13 +1,9 @@
 //deployed connection config
 const clientConfig = {
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL || "postgresql://localhost:5432/emissions",
   ssl: {
     rejectUnauthorized: false
   }
-};
-
-const serverConfig = {
-  url: "",
 };
 
 // local connection config
@@ -17,8 +13,4 @@ const serverConfig = {
 //   port: ,
 // };
 
-// const serverConfig = {
-//   url: "http://localhost:3000",
-// };
-
-module.exports = { clientConfig, serverConfig };
+module.exports = clientConfig;

@@ -106,3 +106,4 @@ typings/
 # config.js
 # emission-data
 client/dist/bundle.js
+client/dist/bundle.js.LICENSE.txt
