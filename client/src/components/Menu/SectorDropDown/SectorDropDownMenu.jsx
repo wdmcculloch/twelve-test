@@ -8,7 +8,7 @@ const SectorDropDownMenu = ({ sector, handleChange }) => {
 
   useEffect(() => {
     axios
-      .get(`${serverConfig.url}/sectorNames`)
+      .get(`/sectorNames`)
       .then((res) => setSectorNames(res.data))
       .catch((err) => console.error(err));
   }, []);

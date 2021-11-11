@@ -141,7 +141,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get(`${serverConfig.url}/data`, {
+      .get(`/data`, {
         params: {
           gas: gas,
           sector: sector,

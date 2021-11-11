@@ -6,9 +6,9 @@ const clientConfig = {
   }
 };
 
-const serverConfig = {
-  url: "",
-};
+// const serverConfig = {
+//   url: "",
+// };
 
 // local connection config
 // const clientConfig = {
@@ -21,4 +21,4 @@ const serverConfig = {
 //   url: "http://localhost:3000",
 // };
 
-module.exports = { clientConfig, serverConfig };
+module.exports = clientConfig;
