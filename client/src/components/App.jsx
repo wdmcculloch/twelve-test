@@ -3,6 +3,10 @@ import axios from "axios";
 import serverConfig from "../../../config/serverConfig.js";
 import MenuMain from "./Menu/MenuMain/MenuMain.jsx";
 import LineChartMain from "./Graphs/LineChartMain/LineChartMain.jsx";
+import AreaChartMain from "./Graphs/AreaChart/AreaChartMain.jsx";
+import BarChartMain from "./Graphs/BarChart/BarChartMain.jsx";
+import ScatterChartMain from "./Graphs/ScatterChart/ScatterChartMain.jsx";
+
 const generateRange = (start, end) => {
   let range = [];
   for (let i = start; i <= end; i++) {
@@ -170,6 +174,10 @@ const App = () => {
       setSector(value);
     }
   };
+  let line = <LineChartMain graphData={graphData} />
+  let area = <AreaChartMain graphData={graphData} />
+  let bar = <BarChartMain graphData={graphData} />
+  let scatter = <ScatterChartMain graphData={graphData}/>
 
   return (
     <div>
@@ -187,7 +195,7 @@ const App = () => {
       {graphData.length === 0 ? (
         <p>{`No data for ${gas} emission data from the ${sector} sector`}</p>
       ) : (
-        <LineChartMain graphData={graphData} />
+        scatter
       )}
     </div>
   );
