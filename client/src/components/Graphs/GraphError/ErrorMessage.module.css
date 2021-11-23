@@ -1,0 +1,8 @@
+.error {
+  margin: 5vh auto 0 auto;
+  width: 80%;
+  height: 60vh;
+  padding-left: 7vw;
+  font-family: var(--ff-1);
+}
+

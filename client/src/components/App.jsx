@@ -3,6 +3,7 @@ import axios from "axios";
 import serverConfig from "../../../config/serverConfig.js";
 import MenuMain from "./Menu/MenuMain/MenuMain.jsx";
 import LineChartMain from "./Graphs/LineChartMain/LineChartMain.jsx";
+import ErrorMessage from "./Graphs/GraphError/ErrorMessage.jsx";
 const generateRange = (start, end) => {
   let range = [];
   for (let i = start; i <= end; i++) {
@@ -185,7 +186,7 @@ const App = () => {
         handleChange={handleChange}
       />
       {graphData.length === 0 ? (
-        <p>{`No data for ${gas} emission data from the ${sector} sector`}</p>
+        <ErrorMessage gas={gas} sector={sector}/>
       ) : (
         <LineChartMain graphData={graphData} />
       )}
